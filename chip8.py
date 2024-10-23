@@ -1,6 +1,12 @@
 import pyglet 
 import sys 
 
+LOGGING = True
+
+def log(msg):
+    if LOGGING:
+        print("[CHIP-8] %s" % msg) 
+
 class Chip(pyglet.window.Window):
     def initialize(self):
         self.clear()
