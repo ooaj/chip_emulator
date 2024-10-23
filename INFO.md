@@ -6,3 +6,5 @@ CHIP-8 Information
 * address register, I, for memory operations 
 * 2048 pixels (64 x 32)
 * 2 timer registers 
+
+the interpreter occupies the first 512 bytes (up to 0x200), so an offset is required for else. 
