@@ -7,4 +7,5 @@ CHIP-8 Information
 * 2048 pixels (64 x 32)
 * 2 timer registers 
 
-the interpreter occupies the first 512 bytes (up to 0x200), so an offset is required for else. 
+the interpreter occupies the first 512 bytes (up to 0x200), so an offset is required for else. (0x000 -> 0x200)
+
