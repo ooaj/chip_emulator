@@ -24,7 +24,12 @@ class Chip(pyglet.window.Window):
         while i < 80:
             self.memory[i] = self.fonts[i]
             i += 1
-
+    def _0ZZZZ(self):
+        extracted_op = self.opcode & 0x00ff
+        try: 
+            self.funcmap[extracted_op]() 
+        except:
+            print("Unknown opcode: 0x%x" % self.opcode)
     def load_rom(self, rom_path):
         """Load a ROM file into memory"""
         log("Loading %s.." % rom_path)
@@ -44,7 +49,7 @@ class Chip(pyglet.window.Window):
 
         extracted_op = self.opcode & 0xf000
         try:
-            self.funcmap[extracted_op]()
+            self.funcmap[extracted_op]() # Call the function that corresponds to the opcode
         except:
             print("Unknown opcode: 0x%x" % self.opcode)
 
